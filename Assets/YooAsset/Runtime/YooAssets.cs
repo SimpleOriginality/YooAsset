@@ -39,7 +39,15 @@ namespace YooAsset
         {
             if (_isInitialize)
             {
-                UnityEngine.Debug.LogWarning($"{nameof(YooAssets)} is initialized !");
+                if(logger==null)
+                {
+                    UnityEngine.Debug.LogWarning($"{nameof(YooAssets)} is initialized !");
+                }
+                else
+                {
+                    logger.Warning($"{nameof(YooAssets)} is initialized !");
+                }
+                
                 return;
             }
 
